@@ -1,0 +1,31 @@
+{
+  "ca": {
+
+  },
+  "peers": {
+    "nnit-hetzner-1": { "url": "https://nnit-hetzner-1:9271" },
+    "nnit-hetzner-2": { "url": "https://nnit-hetzner-2:9271" },
+    "nnit-hetzner-3": { "url": "https://nnit-hetzner-3:9271" }
+  },
+  "specs": {
+    "kube-apiserver": {
+      "type": "standard",
+      "fields": {
+        "CN": "kube-apiserver"
+      },
+      "sans": [
+        "kubernetes.default.svc"
+      ]
+    },
+    "kube-service-accounts": {
+      "type": "standard",
+      "fields": {
+        "CN": "kube-service-accounts"
+      }
+    },
+    "kube-service-account-trust": {
+      "type": "bundle",
+      "from": "kube-service-accounts"
+    }
+  }
+}
